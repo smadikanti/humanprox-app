@@ -127,8 +127,10 @@
         </a>
         <div class="step-detail" style="margin-top:14px;border-color:rgba(255,69,58,0.25);background:rgba(255,69,58,0.04)">
           <strong style="color:#ff6b6b">Important — macOS will block the first launch.</strong> This is normal.<br><br>
-          When you see "Apple could not verify", click <strong>Done</strong> (not Move to Trash).<br><br>
-          Then open <strong>System Settings &rarr; Privacy &amp; Security</strong>, scroll down, and you'll see a message about HumanProx being blocked. Click <code>Open Anyway</code>. You only need to do this once.
+          Open <strong>Terminal</strong> (search in Spotlight) and paste this command:<br>
+          <code style="display:block;margin:8px 0;padding:8px 10px;background:rgba(0,0,0,0.3);border-radius:6px;font-size:11px;user-select:all;-webkit-user-select:all">xattr -cr /Applications/HumanProx.app</code>
+          Press Enter. Then open HumanProx from Applications — it will launch normally.<br><br>
+          If you see "Apple could not verify" instead, click <strong>Done</strong>, then go to <strong>System Settings &rarr; Privacy &amp; Security</strong> and click <code>Open Anyway</code>.
         </div>
       </div>
     </div>
