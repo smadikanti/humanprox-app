@@ -103,10 +103,12 @@
           <a href="https://existential.audio/blackhole/" target="_blank" rel="noopener">Download BlackHole 2ch</a> and run the installer.
         </div>
         <div class="step-detail">
-          After installing, open <code>Audio MIDI Setup</code> (search in Spotlight).<br>
-          Click the <code>+</code> button at the bottom left and select <code>Create Multi-Output Device</code>.<br>
-          Check both your speakers/headphones AND <code>BlackHole 2ch</code>.<br>
-          Set this Multi-Output Device as your Mac's sound output in System Settings &rarr; Sound.
+          After installing, open <code>Audio MIDI Setup</code> (search in Spotlight).<br><br>
+          Click the <code>+</code> button at the bottom left &rarr; <code>Create Multi-Output Device</code>.<br><br>
+          In the right panel you'll see a list of audio devices with checkboxes. Check <strong>two</strong> boxes:<br>
+          &nbsp;&nbsp;&bull; Your normal speakers or headphones (e.g. <code>MacBook Pro Speakers</code> or <code>External Headphones</code>)<br>
+          &nbsp;&nbsp;&bull; <code>BlackHole 2ch</code><br><br>
+          Then go to <strong>System Settings &rarr; Sound &rarr; Output</strong> and select the <code>Multi-Output Device</code> you just created. You'll still hear audio normally — BlackHole silently mirrors it so HumanProx can capture it.
         </div>
       </div>
     </div>
@@ -123,9 +125,10 @@
           <svg viewBox="0 0 16 16" fill="currentColor"><path d="M7.47 10.78a.75.75 0 001.06 0l3.75-3.75a.75.75 0 00-1.06-1.06L8.75 8.44V1.75a.75.75 0 00-1.5 0v6.69L4.78 5.97a.75.75 0 00-1.06 1.06l3.75 3.75zM3.75 13a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5z"/></svg>
           Download for Mac
         </a>
-        <div class="step-detail" style="margin-top:14px">
-          If macOS says the app is from an unidentified developer:<br>
-          Go to System Settings &rarr; Privacy &amp; Security &rarr; scroll down and click <code>Open Anyway</code>.
+        <div class="step-detail" style="margin-top:14px;border-color:rgba(255,69,58,0.25);background:rgba(255,69,58,0.04)">
+          <strong style="color:#ff6b6b">Important — macOS will block the first launch.</strong> This is normal.<br><br>
+          When you see "Apple could not verify", click <strong>Done</strong> (not Move to Trash).<br><br>
+          Then open <strong>System Settings &rarr; Privacy &amp; Security</strong>, scroll down, and you'll see a message about HumanProx being blocked. Click <code>Open Anyway</code>. You only need to do this once.
         </div>
       </div>
     </div>
