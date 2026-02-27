@@ -14,6 +14,7 @@
       --dim: #777;
       --accent: #c96442;
       --green: #34c759;
+      --red: #ff453a;
       --radius: 16px;
     }
     body {
@@ -24,7 +25,7 @@
       display: flex; justify-content: center;
       padding: 60px 24px 80px;
     }
-    .page { max-width: 560px; width: 100%; }
+    .page { max-width: 580px; width: 100%; }
 
     h1 {
       font-size: 32px; font-weight: 700; margin-bottom: 8px;
@@ -60,6 +61,7 @@
       border-radius: 4px; font-family: 'SF Mono', monospace; font-size: 11px;
       color: var(--text);
     }
+    .step-detail strong { color: var(--text); }
 
     .download-btn {
       display: inline-flex; align-items: center; gap: 8px;
@@ -70,6 +72,20 @@
     }
     .download-btn:hover { opacity: 0.85; }
     .download-btn svg { width: 16px; height: 16px; }
+
+    .warn-box {
+      margin-top: 14px; padding: 12px 14px;
+      border: 1px solid rgba(255,69,58,0.25);
+      background: rgba(255,69,58,0.04);
+      border-radius: 10px; font-size: 12px; color: var(--dim); line-height: 1.7;
+    }
+    .warn-box strong { color: #ff6b6b; }
+
+    .checklist { list-style: none; padding: 0; margin: 8px 0 0; }
+    .checklist li {
+      padding: 4px 0 4px 20px; position: relative; font-size: 12px; color: var(--dim); line-height: 1.6;
+    }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
 
     .done-section {
       margin-top: 48px; padding: 24px;
@@ -90,10 +106,10 @@
   <div class="page">
     <h1>HumanProx</h1>
     <p class="tagline">
-      Get set up in under 2 minutes. Install two things, hit Start, and join your interview.
+      Get set up in under 5 minutes. You'll need your invite code, BlackHole installed, and the HumanProx app.
     </p>
 
-    <!-- Step 1 -->
+    <!-- Step 1: BlackHole -->
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
@@ -105,15 +121,18 @@
         <div class="step-detail">
           After installing, open <code>Audio MIDI Setup</code> (search in Spotlight).<br><br>
           Click the <code>+</code> button at the bottom left &rarr; <code>Create Multi-Output Device</code>.<br><br>
-          In the right panel you'll see a list of audio devices with checkboxes. Check <strong>two</strong> boxes:<br>
-          &nbsp;&nbsp;&bull; Your normal speakers or headphones (e.g. <code>MacBook Pro Speakers</code> or <code>External Headphones</code>)<br>
-          &nbsp;&nbsp;&bull; <code>BlackHole 2ch</code><br><br>
-          Then go to <strong>System Settings &rarr; Sound &rarr; Output</strong> and select the <code>Multi-Output Device</code> you just created. You'll still hear audio normally — BlackHole silently mirrors it so HumanProx can capture it.
+          In the right panel, check <strong>two</strong> boxes:
+          <ul class="checklist">
+            <li>Your normal speakers or headphones (e.g. <code>MacBook Pro Speakers</code>)</li>
+            <li><code>BlackHole 2ch</code></li>
+          </ul>
+          <br>
+          Then go to <strong>System Settings &rarr; Sound &rarr; Output</strong> and select the <code>Multi-Output Device</code> you just created. You'll still hear audio normally.
         </div>
       </div>
     </div>
 
-    <!-- Step 2 -->
+    <!-- Step 2: Download -->
     <div class="step">
       <div class="step-num">2</div>
       <div class="step-body">
@@ -125,8 +144,8 @@
           <svg viewBox="0 0 16 16" fill="currentColor"><path d="M7.47 10.78a.75.75 0 001.06 0l3.75-3.75a.75.75 0 00-1.06-1.06L8.75 8.44V1.75a.75.75 0 00-1.5 0v6.69L4.78 5.97a.75.75 0 00-1.06 1.06l3.75 3.75zM3.75 13a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5z"/></svg>
           Download for Mac
         </a>
-        <div class="step-detail" style="margin-top:14px;border-color:rgba(255,69,58,0.25);background:rgba(255,69,58,0.04)">
-          <strong style="color:#ff6b6b">Important — macOS will block the first launch.</strong> This is normal.<br><br>
+        <div class="warn-box">
+          <strong>macOS will block the first launch.</strong> This is normal.<br><br>
           Open <strong>Terminal</strong> (search in Spotlight) and paste this command:<br>
           <code style="display:block;margin:8px 0;padding:8px 10px;background:rgba(0,0,0,0.3);border-radius:6px;font-size:11px;user-select:all;-webkit-user-select:all">xattr -cr /Applications/HumanProx.app</code>
           Press Enter. Then open HumanProx from Applications — it will launch normally.<br><br>
@@ -135,24 +154,48 @@
       </div>
     </div>
 
-    <!-- Step 3 -->
+    <!-- Step 3: Configure -->
     <div class="step">
       <div class="step-num">3</div>
       <div class="step-body">
-        <div class="step-title">Start</div>
+        <div class="step-title">Fill in Your Interview Details</div>
         <div class="step-desc">
-          Open HumanProx. Enter your name, make sure <code>BlackHole 2ch</code> is selected as System Audio,
-          pick your microphone, and hit <strong>Start</strong>.
+          Open HumanProx. You'll see these fields to fill in:
         </div>
         <div class="step-detail">
-          Then open your interview meeting (Zoom, Google Meet, etc.) and start the interview normally.
-          HumanProx runs quietly in the background.
+          <strong>Invite Code</strong> — the 6-character code your coach shared with you. Required.<br><br>
+          <strong>Your Name</strong> — so your coach can identify your session.<br><br>
+          <strong>Audio Devices</strong> — select <code>BlackHole 2ch</code> as System Audio, and your microphone.<br><br>
+          Click <strong>Interview Context</strong> to expand the context section and fill in:
+          <ul class="checklist">
+            <li><strong>Resume</strong> — paste your full resume text</li>
+            <li><strong>Job Description</strong> — paste the JD for this role</li>
+            <li><strong>Company Name</strong></li>
+            <li><strong>Interviewer LinkedIn</strong> (optional) — paste any info about your interviewer</li>
+            <li><strong>Prep Notes</strong> (optional) — any notes from the recruiter</li>
+            <li><strong>Culture Values</strong> (optional) — company values or culture notes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4: Start -->
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">Start</div>
+        <div class="step-desc">
+          Hit <strong>Start</strong>. HumanProx will verify your invite code and connect to your coach.
+        </div>
+        <div class="step-detail">
+          Open your interview meeting (Zoom, Google Meet, Teams, etc.) and start normally.
+          HumanProx runs quietly in the background — your coach will see everything automatically.
         </div>
       </div>
     </div>
 
     <div class="done-section">
-      <p><strong>That's it.</strong> Your coach will see your session automatically. Just focus on the interview.</p>
+      <p><strong>That's it.</strong> Your coach will see your session and context automatically. Just focus on the interview.</p>
     </div>
 
     <div class="footer">HumanProx</div>
